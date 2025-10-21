@@ -1,0 +1,23 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+<BaseLayout title="Cookie Policy – Tensor Factory" description="Essential vs non‑essential cookies, consent, and withdrawal.">
+  <Fragment slot="header"><Header /></Fragment>
+  <section class="section">
+    <div class="container stack">
+      <h1>Cookie Policy</h1>
+      <h2>Categories</h2>
+      <p><strong>Essential:</strong> Required for basic site functionality.</p>
+      <p><strong>Non‑essential:</strong> Analytics/marketing — loaded only after explicit opt‑in.</p>
+      <h2>Consent</h2>
+      <p>Reject‑all is first‑class. You can withdraw consent at any time from this page.</p>
+      <h2>Live inventory</h2>
+      <p>We will display a live list of cookies in use and their purposes prior to launch.</p>
+    </div>
+  </section>
+  <Fragment slot="footer"><Footer /></Fragment>
+</BaseLayout>
+
+

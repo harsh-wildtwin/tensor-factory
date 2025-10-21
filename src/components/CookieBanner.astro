@@ -1,0 +1,31 @@
+---
+const consentKey = 'tf_cookie_consent_v1';
+const consent = 'typeof window !== "undefined" ? window.localStorage.getItem(consentKey) : null';
+---
+<div id="cookie-banner" class="container" style="display:none; position: sticky; bottom: 0; background: #fff; border:1px solid var(--color-border); padding: var(--space-3); border-radius: var(--radius-1); box-shadow: var(--shadow-2); margin-top: var(--space-5);">
+  <p style="margin:0 0 8px;">We use essential cookies and optional analytics. Please choose:</p>
+  <div class="cluster">
+    <button class="btn btn-secondary" id="cookie-reject">Reject all</button>
+    <button class="btn btn-primary" id="cookie-accept">Accept analytics</button>
+  </div>
+</div>
+
+<script>
+  (function() {
+    var key = 'tf_cookie_consent_v1';
+    var state = localStorage.getItem(key);
+    var banner = document.getElementById('cookie-banner');
+    if (!state) {
+      banner.style.display = 'block';
+    }
+    function setConsent(value) {
+      try { localStorage.setItem(key, value); } catch (e) {}
+      banner.style.display = 'none';
+      document.dispatchEvent(new CustomEvent('tf-consent', { detail: { value: value } }));
+    }
+    document.getElementById('cookie-accept')?.addEventListener('click', function(){ setConsent('granted'); });
+    document.getElementById('cookie-reject')?.addEventListener('click', function(){ setConsent('denied'); });
+  })();
+</script>
+
+

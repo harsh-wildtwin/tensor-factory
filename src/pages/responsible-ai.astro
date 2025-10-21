@@ -1,0 +1,33 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import CookieBanner from "../components/CookieBanner.astro";
+---
+<BaseLayout title="Responsible AI – Tensor Factory" description="Our commitments to transparency, privacy, consent, and safety in synthetic media.">
+  <Fragment slot="header"><Header /></Fragment>
+
+  <section class="section">
+    <div class="container stack">
+      <h1>Responsible AI</h1>
+      <h2>Commitments</h2>
+      <ul>
+        <li>Transparency for synthetic content.</li>
+        <li>Privacy by design and consent‑first data practices.</li>
+        <li>Continuous red‑teaming and iterative guardrails.</li>
+        <li>Watermarking/provenance where feasible.</li>
+      </ul>
+
+      <h2>EU AI governance posture</h2>
+      <p>We track and align with applicable transparency requirements across portfolio products. We provide model and dataset summaries where appropriate at the portfolio level.</p>
+
+      <h2>Safety layering</h2>
+      <p>We use multiple layers of safeguards, including pre‑ and post‑generation guardrails and abuse reporting channels. See our Privacy and Cookie pages for more information.</p>
+    </div>
+  </section>
+
+  <Fragment slot="footer"><Footer /></Fragment>
+  <Fragment slot="cookie"><CookieBanner /></Fragment>
+</BaseLayout>
+
+

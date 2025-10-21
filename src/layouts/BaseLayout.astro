@@ -1,0 +1,43 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  noindex?: boolean;
+}
+
+const { title = 'Tensor Factory', description = 'Privacy-first AI consumer platforms', canonical, noindex } = Astro.props as Props;
+import "../styles/base.css";
+import "../styles/components.css";
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {canonical && <link rel="canonical" href={canonical} />}
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Tensor Factory" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; font-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self'" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+  </head>
+  <body>
+    <a href="#content" class="skip-link">Skip to content</a>
+    <slot name="header" />
+    <main id="content" class="container">
+      <slot />
+    </main>
+    <slot name="footer" />
+    <!-- Cookie banner (loads minimal inline JS) -->
+    <slot name="cookie" />
+  </body>
+  
+</html>
+
+

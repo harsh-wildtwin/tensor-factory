@@ -1,0 +1,71 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import CookieBanner from "../components/CookieBanner.astro";
+import OrgJson from "./_org-jsonld.astro";
+import SiteJson from "./_site-jsonld.astro";
+---
+<BaseLayout title="Tensor Factory – Privacy‑first AI consumer platforms" description="We design and scale synthetic‑media experiences with safety, consent, and creator economics at the core.">
+  <Fragment slot="header"><Header /></Fragment>
+  <OrgJson />
+  <SiteJson />
+
+  <section class="hero">
+    <div class="container stack">
+      <h1 class="hero-title">Privacy‑first AI consumer platforms</h1>
+      <p class="hero-subtitle">We design and scale synthetic‑media experiences with safety, consent, and creator economics at the core.</p>
+      <div class="cluster" style="margin-top: var(--space-4);">
+        <a href="/careers" class="btn btn-primary">Careers</a>
+        <a href="/contact" class="btn btn-secondary">Partner with us</a>
+      </div>
+      <svg aria-hidden="true" focusable="false" width="100%" height="120" viewBox="0 0 1200 120" style="margin-top: var(--space-6);">
+        <defs>
+          <linearGradient id="g" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0%" stop-color="var(--color-accent-600)" stop-opacity="0.15"/>
+            <stop offset="100%" stop-color="var(--color-accent-900)" stop-opacity="0.05"/>
+          </linearGradient>
+        </defs>
+        <path d="M0,80 C300,20 900,140 1200,60 L1200,120 L0,120 Z" fill="url(#g)" />
+      </svg>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container stack">
+      <div class="section-header">
+        <h2 class="section-title">What we do</h2>
+      </div>
+      <div class="grid grid-2 grid-3">
+        <div class="card">
+          <h3>Synthetic Media R&D</h3>
+          <p>Personalization, guardrails, provenance.</p>
+        </div>
+        <div class="card">
+          <h3>UGC Monetization Infrastructure</h3>
+          <p>Subscriptions, payouts, risk controls.</p>
+        </div>
+        <div class="card">
+          <h3>Platform Operations</h3>
+          <p>Trust &amp; safety, governance, integrations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section muted">
+    <div class="container">
+      <div class="pills" aria-label="Principles">
+        <span class="pill">Privacy by design</span>
+        <span class="pill">Consent‑first</span>
+        <span class="pill">Safety at scale</span>
+        <span class="pill">EU‑ready governance</span>
+      </div>
+    </div>
+  </section>
+
+  <Fragment slot="footer"><Footer /></Fragment>
+  <Fragment slot="cookie"><CookieBanner /></Fragment>
+</BaseLayout>
+
+

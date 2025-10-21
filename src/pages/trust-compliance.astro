@@ -1,0 +1,39 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import CookieBanner from "../components/CookieBanner.astro";
+---
+<BaseLayout title="Trust & Compliance – Tensor Factory" description="Security, data protection, policies, and disclosure details for partners and regulators.">
+  <Fragment slot="header"><Header /></Fragment>
+
+  <section class="section">
+    <div class="container stack">
+      <h1>Trust &amp; Compliance</h1>
+      <h2>Data protection</h2>
+      <p>Controller: Tensor Factory Sàrl‑s. Privacy contact to be listed. Data request email/form provided on the Contact page.</p>
+
+      <h2>Security</h2>
+      <p>We employ encryption in transit/at rest, vendor due diligence, and incident response. For disclosure, contact <a href="/contact">security</a>.</p>
+
+      <h2>Risk &amp; payments</h2>
+      <p>High‑level controls include KYB/KYC, sanctions/PEP screening, and chargeback controls.</p>
+
+      <h2>Policies</h2>
+      <ul>
+        <li>Acceptable Use (parent‑level)</li>
+        <li>Privacy Policy</li>
+        <li>Cookie Policy</li>
+        <li>Platform Integrity statement</li>
+      </ul>
+
+      <h2>Vulnerability disclosure</h2>
+      <p>Security contact and safe‑harbor scope will be documented; non‑monetary thanks page optional.</p>
+    </div>
+  </section>
+
+  <Fragment slot="footer"><Footer /></Fragment>
+  <Fragment slot="cookie"><CookieBanner /></Fragment>
+</BaseLayout>
+
+

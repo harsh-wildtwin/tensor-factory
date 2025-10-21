@@ -1,0 +1,27 @@
+---
+const nav = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/our-work', label: 'Our Work' },
+  { href: '/responsible-ai', label: 'Responsible AI' },
+  { href: '/trust-compliance', label: 'Trust & Compliance' },
+  { href: '/careers', label: 'Careers' },
+  { href: '/newsroom', label: 'Newsroom' },
+];
+---
+<header class="site-header">
+  <div class="container nav" role="navigation" aria-label="Main">
+    <a href="/" class="brand" style="text-decoration:none; color:inherit;">
+      <span class="brand-mark"></span>
+      <span>Tensor Factory</span>
+    </a>
+    <nav class="cluster" style="margin-left:auto;">
+      {nav.map(item => (
+        <a href={item.href}>{item.label}</a>
+      ))}
+    </nav>
+  </div>
+  
+</header>
+
+

@@ -1,0 +1,77 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+// Roles data can be swapped to a CMS or JSON later
+const roles = [
+  // Example role (commented out)
+  // {
+  //   title: 'Senior Machine Learning Engineer',
+  //   employmentType: 'FULL_TIME',
+  //   locationType: 'TELECOMMUTE',
+  //   applicantLocationRequirements: 'EU',
+  //   datePosted: '2025-10-20',
+  //   validThrough: '2025-12-31',
+  //   description: 'Build and ship privacy‑first AI consumer platforms.',
+  // }
+];
+
+const showJobPostingJsonLd = roles.length > 0;
+const jsonLd = showJobPostingJsonLd ? {
+  "@context": "https://schema.org",
+  "@type": "JobPosting",
+  "title": roles[0].title,
+  "employmentType": roles[0].employmentType,
+  "hiringOrganization": {"@type":"Organization","name":"Tensor Factory"},
+  "jobLocationType": roles[0].locationType,
+  "applicantLocationRequirements": {"@type":"Country","name": roles[0].applicantLocationRequirements},
+  "datePosted": roles[0].datePosted,
+  "validThrough": roles[0].validThrough,
+  "description": roles[0].description,
+  "directApply": true,
+} : null;
+---
+<BaseLayout title="Careers – Tensor Factory" description="Work on frontier AI consumer platforms with privacy‑by‑design.">
+  <Fragment slot="header"><Header /></Fragment>
+
+  {jsonLd && (
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  )}
+
+  <section class="section">
+    <div class="container stack">
+      <h1>Careers</h1>
+      <p><strong>EVP:</strong> Work on frontier AI consumer platforms with privacy‑by‑design.</p>
+      <p><strong>Discretion:</strong> Public‑facing materials reference the parent entity.</p>
+
+      <h2>Open roles</h2>
+      {roles.length === 0 ? (
+        <p style="color:var(--color-text-muted)">No open roles at this time. You can still reach us at <a href="mailto:hello@tensorfactory.net">hello@tensorfactory.net</a>.</p>
+      ) : (
+        <div class="grid grid-2">
+          {roles.map((role) => (
+            <div class="card">
+              <h3>{role.title}</h3>
+              <p style="color:var(--color-text-muted)">{role.description}</p>
+              <div class="cluster" style="margin-top:12px;">
+                <a class="btn btn-primary" href={`/careers/confirm?role=${encodeURIComponent(role.title)}`}>Apply via email</a>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      <h2>Benefits</h2>
+      <ul>
+        <li>Remote‑friendly within EU timezones</li>
+        <li>Modern tooling and pragmatic engineering culture</li>
+        <li>Impact on privacy‑first consumer AI products</li>
+      </ul>
+    </div>
+  </section>
+
+  <Fragment slot="footer"><Footer /></Fragment>
+</BaseLayout>
+
+

@@ -1,0 +1,32 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const email = 'hello@tensorfactory.net';
+---
+<BaseLayout title="Contact – Tensor Factory" description="Route inquiries to the right mailbox.">
+  <Fragment slot="header"><Header /></Fragment>
+
+  <section class="section">
+    <div class="container stack">
+      <h1>Contact</h1>
+      <p>Reach us at <a href={`mailto:${email}`}>{email}</a>.</p>
+      <p class="muted">We aim to respond within a reasonable time. No SLA is promised.</p>
+      <details>
+        <summary>Topic hints</summary>
+        <ul>
+          <li>Partnerships/Payments</li>
+          <li>Investors</li>
+          <li>Media</li>
+          <li>General</li>
+          <li>Security</li>
+        </ul>
+      </details>
+    </div>
+  </section>
+
+  <Fragment slot="footer"><Footer /></Fragment>
+</BaseLayout>
+
+

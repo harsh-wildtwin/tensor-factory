@@ -1,0 +1,31 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+<BaseLayout title="Privacy Policy – Tensor Factory" description="GDPR‑grade privacy policy covering controller identity, purposes, legal bases, retention, rights, contact, vendors, and transfers.">
+  <Fragment slot="header"><Header /></Fragment>
+  <section class="section">
+    <div class="container stack">
+      <h1>Privacy Policy</h1>
+      <p><strong>Controller:</strong> Tensor Factory Sàrl‑s (Luxembourg). Contact/DPO to be listed. Last updated: 2025‑10‑20.</p>
+      <h2>Purposes &amp; legal bases</h2>
+      <p>We process limited personal data for contact handling, security, and simple analytics. Legal bases include consent, contract, and legitimate interests, as appropriate.</p>
+      <h2>Retention</h2>
+      <p>We retain data only as long as necessary for the stated purposes and to meet legal obligations.</p>
+      <h2>Your rights</h2>
+      <p>You may request access, rectification, erasure, restriction, objection, and portability. Instructions will be provided on the Contact page.</p>
+      <h2>Vendors &amp; transfers</h2>
+      <p>Vendors and transfer safeguards (including SCCs where needed) will be listed prior to launch.</p>
+      <h2>Analytics</h2>
+      <p>We use privacy‑preserving analytics in cookieless mode where possible. If cookies are used, we request explicit consent.</p>
+      <h2>Children’s data</h2>
+      <p>Our site is not directed to children; we do not knowingly collect children’s data.</p>
+      <h2>Complaints</h2>
+      <p>You may lodge a complaint with your supervisory authority.</p>
+    </div>
+  </section>
+  <Fragment slot="footer"><Footer /></Fragment>
+</BaseLayout>
+
+

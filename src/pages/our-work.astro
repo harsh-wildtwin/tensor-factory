@@ -1,0 +1,37 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import CookieBanner from "../components/CookieBanner.astro";
+---
+<BaseLayout title="Our Work – Tensor Factory" description="We incubate and operate AI consumer products, with a focus on safety and governance.">
+  <Fragment slot="header"><Header /></Fragment>
+
+  <section class="section">
+    <div class="container stack">
+      <h1>Our work</h1>
+      <p>We operate a studio model to incubate and scale AI consumer products. Our approach combines R&amp;D in personalization and safety with robust platform operations.</p>
+
+      <h2>Portfolio</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>WildTwin</h3>
+          <p>An AI‑native creator subscription product.</p>
+          <small>Copy remains general; external link only when appropriate.</small>
+        </div>
+      </div>
+
+      <h2>Research highlights</h2>
+      <ul>
+        <li>Personalization: adapting experiences to user preferences responsibly.</li>
+        <li>LoRA tooling: efficient fine‑tuning workflows.</li>
+        <li>Content safety filters: multi‑layer guardrails pre‑/post‑generation.</li>
+      </ul>
+    </div>
+  </section>
+
+  <Fragment slot="footer"><Footer /></Fragment>
+  <Fragment slot="cookie"><CookieBanner /></Fragment>
+</BaseLayout>
+
+

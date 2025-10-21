@@ -1,0 +1,18 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+<BaseLayout title="Accessibility – Tensor Factory" description="Our commitment to WCAG 2.2 AA accessibility.">
+  <Fragment slot="header"><Header /></Fragment>
+  <section class="section">
+    <div class="container stack">
+      <h1>Accessibility</h1>
+      <p>Tensor Factory is committed to delivering an accessible website that conforms to WCAG 2.2 AA. We provide semantic landmarks, keyboard navigation, focus states, proper labels and errors, and screen reader support.</p>
+      <p>If you encounter accessibility issues, please contact us via the Contact page.</p>
+    </div>
+  </section>
+  <Fragment slot="footer"><Footer /></Fragment>
+</BaseLayout>
+
+

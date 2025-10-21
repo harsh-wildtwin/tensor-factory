@@ -1,0 +1,22 @@
+---
+const data = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Tensor Factory Sàrl-s",
+  "url": "https://tensorfactory.net/",
+  "logo": "https://tensorfactory.net/assets/logo.svg",
+  "legalName": "Tensor Factory Sàrl-s",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "LU"
+  },
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "hello@tensorfactory.net"
+  }]
+};
+---
+<script type="application/ld+json" set:html={JSON.stringify(data)} />
+
+

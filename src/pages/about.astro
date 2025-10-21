@@ -1,0 +1,44 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import CookieBanner from "../components/CookieBanner.astro";
+---
+<BaseLayout title="About – Tensor Factory" description="Luxembourg‑based product studio focused on AI consumer platforms and UGC monetization infrastructure.">
+  <Fragment slot="header"><Header /></Fragment>
+
+  <section class="section">
+    <div class="container stack">
+      <h1>About Tensor Factory</h1>
+      <p>Tensor Factory Sàrl‑s is a Luxembourg‑based product studio focused on AI consumer platforms and UGC monetization infrastructure. We combine applied research in personalization and safety tooling with platform operations and risk‑aware payments to bring responsible synthetic‑media products to market.</p>
+
+      <h2>Leadership</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Leadership Name</h3>
+          <p>Role — 2–3 line bio. Portrait optional (lazy‑loaded, AVIF/WebP).</p>
+        </div>
+        <div class="card">
+          <h3>Leadership Name</h3>
+          <p>Role — 2–3 line bio. Portrait optional (lazy‑loaded, AVIF/WebP).</p>
+        </div>
+      </div>
+
+      <h2>Focus areas</h2>
+      <ul>
+        <li>AI consumer platforms</li>
+        <li>Synthetic media</li>
+        <li>UGC monetization</li>
+        <li>Risk‑aware payments</li>
+      </ul>
+
+      <h2>Corporate details</h2>
+      <p><strong>Registered name:</strong> Tensor Factory Sàrl‑s. RCS/VAT numbers — pending. Registered office address — to be added.</p>
+    </div>
+  </section>
+
+  <Fragment slot="footer"><Footer /></Fragment>
+  <Fragment slot="cookie"><CookieBanner /></Fragment>
+</BaseLayout>
+
+
