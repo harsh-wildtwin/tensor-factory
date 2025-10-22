@@ -1,6 +1,6 @@
 # tensor-factory
 
-Static site built with Astro. Deployed via GitHub Pages.
+Static site built with Astro. Deployed via GitHub Pages at **https://tensorfactory.net**.
 
 ## Local development
 
@@ -17,36 +17,30 @@ npm run build
 
 Outputs to `dist/`.
 
-## Deploy to GitHub Pages
+## Deployment
 
-This repo includes a workflow at `.github/workflows/deploy.yml` that publishes `dist/` to GitHub Pages.
+This repo includes a GitHub Actions workflow that automatically builds and deploys to GitHub Pages.
 
-Steps to enable:
+### Current setup
+- **Live site**: https://tensorfactory.net
+- **Custom domain**: Configured via `public/CNAME` and GitHub Pages settings
+- **DNS**: GoDaddy A records pointing to GitHub Pages IPs
+- **SSL**: Automatic HTTPS via GitHub Pages
 
-1. Push the `main` branch to GitHub.
-2. In GitHub → Repository Settings → Pages:
-   - Set Source to "GitHub Actions".
-3. Ensure the workflow runs successfully on push. It will:
-   - Install deps with `npm ci`
-   - Build with `npm run build`
-   - Upload `dist/` as artifact and deploy to Pages
+### Workflow
+The `.github/workflows/main.yml` workflow:
+- Triggers on push to `main` branch
+- Installs dependencies with `npm ci`
+- Builds with `npm run build`
+- Deploys `dist/` to GitHub Pages
+- Automatically handles custom domain and SSL
 
-### Project vs org/user site
-- For a project site, the published URL will be `https://<owner>.github.io/<repo>`.
-- For an org/user site, use a repo named `<owner>.github.io`.
+### Custom domain configuration
+- `public/CNAME` contains `tensorfactory.net`
+- GitHub Pages → Settings → Pages → Custom domain: `tensorfactory.net`
+- DNS A records in GoDaddy:
+  - `@` → 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153
+  - `www` → `harsh-wildtwin.github.io` (CNAME)
 
-Reference: GitHub Pages docs: https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages
-
-### Custom domain (optional)
-
-If you have a custom domain, configure it in GitHub → Settings → Pages → Custom domain.
-
-Optionally, add a `public/CNAME` file with your domain (e.g., `tensorfactory.net`) so it persists across deployments.
-
-```text
-public/CNAME
-```
-
-DNS:
-- Add an `A` record to GitHub Pages IPs or a `CNAME` to `<owner>.github.io` per GitHub docs.
+Reference: [GitHub Pages docs](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages)
 

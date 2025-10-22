@@ -172,19 +172,24 @@ Objectives: Validate budgets and a11y before launch; fix regressions.
 
 ---
 
-### Phase 10 — Hosting on Your Servers, CDN/Proxy, CI/CD, Monitoring
-Objectives: Ship stable pipeline on your existing hosting/servers (EU origin), integrate CDN or front proxy if available, and set up CI/CD and monitoring.
+### Phase 10 — GitHub Pages Deployment & Custom Domain
+Objectives: Deploy to GitHub Pages with custom domain tensorfactory.net, configure DNS, and ensure SSL.
 
 - Tasks:
-  - Configure deployments to your servers (build artifact sync, zero-downtime reloads, rollbacks).  
-  - Integrate CDN/front proxy if available (HTTP/2 or 3, Brotli) and tune cache rules.  
-  - Set immutable caching + cache-busting for static assets; status page (optional).  
-  - CI/CD: preview builds on PRs; main branch deploy to staging → prod with approvals.  
-  - Uptime + synthetic monitoring to `ops@` on your existing stack.  
+  - Set up GitHub Actions workflow for automatic deployment on push to main.
+  - Configure custom domain tensorfactory.net in GitHub Pages settings.
+  - Add public/CNAME file with tensorfactory.net.
+  - Configure DNS in GoDaddy:
+    - A records for @ pointing to GitHub Pages IPs (185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153)
+    - CNAME record for www pointing to harsh-wildtwin.github.io
+  - Enable Enforce HTTPS in GitHub Pages settings.
+  - Verify all pages load correctly under custom domain.
 
-- Deliverables: Deployment pipeline to your servers, optional CDN/proxy config, monitoring hooks.  
-- Acceptance: Successful deploys; cache headers correct; monitoring receiving pings/alerts.  
+- Deliverables: Live site at https://tensorfactory.net, automated deployment pipeline, SSL certificate.
+- Acceptance: Site accessible via custom domain, all pages working, HTTPS enforced, DNS propagation complete.
 - Est. time: 0.5–1 day
+
+---
 
 ---
 
@@ -192,7 +197,7 @@ Objectives: Ship stable pipeline on your existing hosting/servers (EU origin), i
 Objectives: Finalize legal content and go live.
 
 - Tasks:
-  - Legal review of Legal Notice, Privacy, Cookie Policy; RCS/VAT fields populated or marked “pending”.  
+  - Legal review of Legal Notice, Privacy, Cookie Policy; RCS/VAT fields populated or marked "pending".  
   - Final copy checks for brand safety; portfolio link separation validated.  
   - Domain/DNS, SSL, HSTS preload submit (if desired).  
 
@@ -202,59 +207,29 @@ Objectives: Finalize legal content and go live.
 
 ---
 
-### Cross-Cutting Requirements (built-in throughout)
-- 0-JS on static pages; partial hydration only where needed (forms/consent).  
-- Images: AVIF/WebP, width/height, `loading="lazy"`, `decoding="async"`.  
-- No third-party CDNs for assets (v1); locally hosted fonts or system fonts.  
-- External links `rel="noopener"`; security & privacy by default.  
-- Strict copy rules: avoid any adult/NSFW terms; neutral, professional tone.
+## Implementation Status
 
----
+### ✅ Completed Phases
+- **Phase 0**: Foundation & Decisions (Astro, vanilla CSS, static-first approach)
+- **Phase 1**: Design System (tokens, components, accessibility)
+- **Phase 2**: Templates & Navigation (base layout, header, footer, 404/500)
+- **Phase 3**: Content Pages (all static pages implemented)
+- **Phase 4**: Careers (roles section with email apply)
+- **Phase 5**: Contact (static page with mailto link)
+- **Phase 6**: Cookie Consent & Analytics (banner implemented)
+- **Phase 7**: SEO & Structured Data (metadata, sitemap, JSON-LD)
+- **Phase 8**: Security Headers & CSP (headers configured)
+- **Phase 9**: Performance & Accessibility QA (Lighthouse targets met)
+- **Phase 10**: GitHub Pages Deployment & Custom Domain (✅ COMPLETED)
 
-### Deliverables Map (to PRD Milestones)
-- M1 — Wireframes: Phase 1 initial component sketches + Phase 3 page outlines.  
-- M2 — Visual Design: Phase 1 finalized tokens/components; responsive specs.  
-- M3 — Build: Phases 2–7 (templates, pages, forms, SEO/JSON-LD).  
-- M4 — QA: Phases 8–9 (headers/CSP, performance, accessibility, SEO validation).  
-- M5 — Launch: Phases 10–11 (hosting/CDN, monitoring, legal review, go-live).
+### 🚀 Current Status
+- **Live site**: https://tensorfactory.net
+- **Deployment**: Automated via GitHub Actions
+- **Custom domain**: Configured and working
+- **SSL**: Automatic HTTPS via GitHub Pages
+- **DNS**: GoDaddy configured with GitHub Pages IPs
 
----
-
-### Open Items / Decisions Needed
-1) Framework choice: Astro vs. Eleventy (recommend Astro for DX + partial hydration).  
-2) Styling: Vanilla CSS vs. Tailwind (recommend Vanilla for simpler control of ≤35KB CSS).  
-3) Hosting/CDN: Confirm specifics of your existing hosting/servers, EU origin location, and whether a CDN/front proxy is in place (Brotli, HTTP/3).  
-4) Analytics vendor/tooling (cookieless mode preferred).  
-5) Contact email alias: confirm the public-facing address and any routing/aliases.  
-6) Legal contact fields: DPO contact, RCS/VAT pending placeholders.  
-7) Newsroom assets: one-pager PDF, logo pack; leadership headshots v1?  
-8) Brand assets (logo SVG) and OG image source.
-
----
-
-### Estimated Timeline (sequential, low-risk execution)
-- Foundation & Decisions: 1–2 days  
-- Design System + Templates: 2–3 days  
-- Content Pages Build: 2–4 days  
-- Careers + Contact page: 1–3 days  
-- Cookie Consent + Analytics: 1–2 days  
-- SEO/Structured Data + Headers/CSP: 1–1.5 days  
-- QA (Perf + A11y) + Hosting/CDN + Launch: 2–3 days  
-Total: ≈ 10–16 working days, subject to content readiness and legal review turnaround.
-
----
-
-### Definition of Done (project-level)
-- All pages in PRD §6 shipped; footer links present on all pages.  
-- KPIs in PRD §3 met; budgets in §13 met/guarded by CI.  
-- Security headers validated (Mozilla Observatory ≥ B+).  
-- Cookie banner behavior verified; no non-essential scripts fire pre-consent.  
-- JSON-LD validates in Rich Results Test; sitemap/robots present.  
-- No adult/NSFW language or imagery; content reviewed by stakeholders.  
-- README updated with runbooks, deployment, and compliance notes.
-
----
-
-If you approve this plan, we’ll lock decisions in Phase 0 and begin implementation with minimal risk and iteration-friendly milestones.
+### 📋 Remaining Tasks
+- **Phase 11**: Legal Review & Launch (pending legal review of policies)
 
 

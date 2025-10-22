@@ -1,0 +1,47 @@
+Zero-cost static hosting options that support your own domain and HTTPS. All are sufficient for 5–10 visits/day.
+
+- Cloudflare Pages
+  - Custom domain + free SSL, global CDN, “unlimited” bandwidth/requests on free tier.
+  - Simple with Cloudflare DNS; good DX for static Astro sites.
+
+- GitHub Pages (Important --- Chosen for now)
+  - Custom domain + free SSL (Let’s Encrypt). Push to a repo, publish from `main` or `/docs`.
+  - Soft usage limits; more than enough for your traffic.
+
+- Netlify (Starter)
+  - Custom domain + free SSL, global CDN, deploy from Git or drag‑and‑drop.
+  - Free tier has fair‑use bandwidth/build minutes; fine for small sites.
+
+- Vercel (Hobby)
+  - Custom domains + free SSL, Git deploys, great for frontend frameworks.
+  - Fair‑use limits; static sites are typically fine.
+
+- Firebase Hosting (Spark/free)
+  - Custom domain + free SSL, CDN. Quotas are small but adequate for low traffic.
+
+- Render (Static Sites)
+  - Custom domain + free SSL, Git deploys, global CDN.
+  - Free static sites tier suitable for small personal sites.
+
+- Kinsta Static Site Hosting (free)
+  - Custom domain + free SSL, global edge. Free bandwidth/build minutes sufficient for small sites.
+
+- GitLab Pages
+  - Custom domain + free SSL, deploy from GitLab CI.
+  - Solid if you’re already on GitLab.
+
+Notes and cautions
+- Use providers’ free SSL for custom domains (typically auto-issuance).  
+- Avoid hosts that require a paid tier to connect a custom domain (some do); the options above allow it free.
+- Neocities’ free tier does not support custom domains (requires paid “Supporter”).
+
+Quick pick
+- Easiest overall: Cloudflare Pages (especially if you can use Cloudflare DNS).  
+- Developer-simple: GitHub Pages (if your code is already on GitHub).  
+- Framework-friendly: Vercel or Netlify.
+
+Basic deployment flow (any of the above)
+- Build your site (Astro): `npm run build` → outputs `dist/`.
+- Connect your repo (or upload `dist/`) to the host.
+- Add your custom domain in the host’s dashboard, follow the DNS instructions (usually a CNAME for `www` and ALIAS/flattening or A records for apex).
+- Enable/verify SSL (most auto‑provision within minutes).
