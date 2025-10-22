@@ -1,18 +1,17 @@
 ---
-const base = Astro.site?.pathname ?? '/tensor-factory';
 const nav = [
-  { href: base, label: 'Home' },
-  { href: base + '/about', label: 'About' },
-  { href: base + '/our-work', label: 'Our Work' },
-  { href: base + '/responsible-ai', label: 'Responsible AI' },
-  { href: base + '/trust-compliance', label: 'Trust & Compliance' },
-  { href: base + '/careers', label: 'Careers' },
-  { href: base + '/newsroom', label: 'Newsroom' },
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/our-work', label: 'Our Work' },
+  { href: '/responsible-ai', label: 'Responsible AI' },
+  { href: '/trust-compliance', label: 'Trust & Compliance' },
+  { href: '/careers', label: 'Careers' },
+  { href: '/newsroom', label: 'Newsroom' },
 ];
 ---
 <header class="site-header">
   <div class="container nav" role="navigation" aria-label="Main">
-    <a href={base} class="brand" style="text-decoration:none; color:inherit;">
+    <a href="/" class="brand" style="text-decoration:none; color:inherit;">
       <span class="brand-mark"></span>
       <span>Tensor Factory</span>
     </a>

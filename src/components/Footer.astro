@@ -6,16 +6,12 @@
         <p class="" style="margin-top:4px; color:var(--color-text-muted);">Luxembourg · EU</p>
       </div>
       <div class="cluster" style="justify-content:flex-end; gap:16px;">
-        {(() => { const base = (Astro.site?.pathname ?? '/tensor-factory'); return (
-          <>
-            <a href={base + '/contact'}>Contact</a>
-            <a href={base + '/legal-notice'}>Legal Notice</a>
-            <a href={base + '/privacy'}>Privacy</a>
-            <a href={base + '/cookies'}>Cookie Policy</a>
-            <a href={base + '/accessibility'}>Accessibility</a>
-            <a href={base + '/supplier'}>Supplier/Vendor</a>
-          </>
-        ); })()}
+        <a href="/contact">Contact</a>
+        <a href="/legal-notice">Legal Notice</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/cookies">Cookie Policy</a>
+        <a href="/accessibility">Accessibility</a>
+        <a href="/supplier">Supplier/Vendor</a>
       </div>
     </div>
   </div>
