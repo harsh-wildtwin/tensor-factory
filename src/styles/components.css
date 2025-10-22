@@ -37,6 +37,7 @@
 .section {
   padding-top: var(--space-9); padding-bottom: var(--space-9);
 }
+.section.compact-top { padding-top: var(--space-4); }
 .section-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: var(--space-5); }
 .section-title { font-size: var(--font-size-3xl); margin: 0; }
 .section-subtitle { color: var(--color-text-muted); }
@@ -49,6 +50,23 @@
 .site-header nav a { color: var(--color-text); padding: 6px 8px; border-radius: 6px; }
 .site-header nav a:hover { background: var(--surface-muted); }
 .site-footer { border-top: 1px solid var(--color-border); padding: var(--space-6) 0; color: var(--color-text-muted); }
+
+/* Mobile navigation (CSS-only hamburger) */
+.nav-toggle { display: none; }
+.hamburger { display: none; cursor: pointer; margin-left: auto; }
+.hamburger span { display: block; width: 22px; height: 2px; background: var(--color-text); margin: 5px 0; transition: transform var(--transition-fast), opacity var(--transition-fast); }
+
+@media (max-width: 720px) {
+  .site-header .nav { gap: var(--space-2); }
+  .site-header .brand { gap: 8px; align-items: center; margin-left: var(--space-3); }
+  .site-header .brand-mark { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; }
+  .site-header .brand span + span { font-size: 15px; }
+
+  .hamburger { display: block; margin-right: var(--space-3); }
+  .nav-links { position: absolute; top: 60px; left: 0; right: 0; background: var(--color-bg); border-bottom: 1px solid var(--color-border); display: none; flex-direction: column; gap: 0; padding: 10px var(--container-pad-x); }
+  .nav-links a { padding: 10px 6px; display: block; }
+  #nav-toggle:checked ~ .nav-links { display: flex; }
+}
 
 /* Alerts */
 .alert { padding: var(--space-3) var(--space-4); border-radius: var(--radius-1); border: 1px solid; }

@@ -29,7 +29,13 @@ const nav = [
       </span>
       <span>Tensor Factory</span>
     </a>
-    <nav class="cluster" style="margin-left:auto;">
+    <input id="nav-toggle" type="checkbox" class="nav-toggle" aria-label="Toggle navigation" />
+    <label class="hamburger" for="nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+    <nav id="primary-navigation" class="cluster nav-links" style="margin-left:auto;">
       {nav.map(item => (
         <a href={item.href}>{item.label}</a>
       ))}
