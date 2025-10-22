@@ -1,8 +1,8 @@
 /* Design Tokens: colors, spacing, typography, radii, shadows, sizing */
 
 :root {
-  /* Colors: grayscale + one accent (blue-600 family) */
-  --color-neutral-950: #020617;
+  /* Colors: shifted to a dark theme with violet/indigo accent */
+  --color-neutral-950: #0b1220; /* deep navy */
   --color-neutral-0: #ffffff;
   --color-neutral-50: #f8fafc;
   --color-neutral-100: #f1f5f9;
@@ -15,20 +15,21 @@
   --color-neutral-800: #1f2937;
   --color-neutral-900: #0f172a;
 
-  --color-accent-500: #3b82f6;
-  --color-accent-600: #2563eb; /* primary accent */
-  --color-accent-700: #1d4ed8; /* hover/active */
-  --color-accent-800: #1e40af; /* focus ring contrast */
-  --color-accent-900: #1e3a8a;
+  /* Violet/indigo accent for buttons, focus, and brand */
+  --color-accent-500: #8b5cf6;
+  --color-accent-600: #7c3aed; /* primary accent */
+  --color-accent-700: #6d28d9; /* hover/active */
+  --color-accent-800: #5b21b6; /* focus ring contrast */
+  --color-accent-900: #4c1d95;
 
-  --color-text: var(--color-neutral-900);
-  --color-text-muted: var(--color-neutral-600);
-  --color-bg: var(--color-neutral-0);
-  --color-border: var(--color-neutral-200);
+  --color-text: var(--color-neutral-50);
+  --color-text-muted: var(--color-neutral-400);
+  --color-bg: var(--color-neutral-950);
+  --color-border: rgba(148, 163, 184, 0.18);
   --color-focus: var(--color-accent-800);
-  --color-success: #0f766e;
-  --color-danger: #b91c1c;
-  --color-warning: #b45309;
+  --color-success: #22c55e;
+  --color-danger: #ef4444;
+  --color-warning: #f59e0b;
 
   /* Spacing scale (8px base) */
   --space-0: 0;
@@ -86,10 +87,10 @@
   --transition-base: 200ms ease;
 
   /* Surfaces */
-  --surface-muted: var(--color-neutral-50);
-  --surface-strong: var(--color-neutral-0);
-  --hero-gradient: radial-gradient(1200px 600px at 100% -10%, rgba(37, 99, 235, 0.08), transparent 60%),
-    radial-gradient(800px 400px at -10% 10%, rgba(30, 58, 138, 0.06), transparent 60%);
+  --surface-muted: var(--color-neutral-900);
+  --surface-strong: #111827; /* slightly lighter than bg for cards */
+  --hero-gradient: radial-gradient(1200px 600px at 100% -10%, rgba(124, 58, 237, 0.20), transparent 60%),
+    radial-gradient(800px 400px at -10% 10%, rgba(59, 130, 246, 0.12), transparent 60%);
 }
 
 /* Content width container */

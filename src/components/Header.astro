@@ -2,7 +2,6 @@
 const nav = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
-  { href: '/our-work', label: 'Our Work' },
   { href: '/responsible-ai', label: 'Responsible AI' },
   { href: '/trust-compliance', label: 'Trust & Compliance' },
   { href: '/careers', label: 'Careers' },
@@ -12,7 +11,22 @@ const nav = [
 <header class="site-header">
   <div class="container nav" role="navigation" aria-label="Main">
     <a href="/" class="brand" style="text-decoration:none; color:inherit;">
-      <span class="brand-mark"></span>
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" focusable="false">
+          <defs>
+            <linearGradient id="cubeGrad" x1="0" x2="1" y1="1" y2="0">
+              <stop offset="0%" stop-color="#8E3AE4"/>
+              <stop offset="100%" stop-color="#0065E5"/>
+            </linearGradient>
+          </defs>
+          <g fill="none" stroke="url(#cubeGrad)" stroke-width="1.4">
+            <path d="M12 2l9 5v10l-9 5-9-5V7l9-5z" fill="url(#cubeGrad)" fill-opacity="0.18" stroke="none"/>
+            <path d="M12 2l9 5-9 5-9-5 9-5z" fill="none"/>
+            <path d="M21 7v10l-9 5V12l9-5z"/>
+            <path d="M3 7v10l9 5V12L3 7z"/>
+          </g>
+        </svg>
+      </span>
       <span>Tensor Factory</span>
     </a>
     <nav class="cluster" style="margin-left:auto;">

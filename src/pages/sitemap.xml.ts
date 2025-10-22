@@ -5,7 +5,6 @@ export const prerender = true;
 const pages = [
   '/',
   '/about',
-  '/our-work',
   '/responsible-ai',
   '/trust-compliance',
   '/careers',
@@ -15,7 +14,7 @@ const pages = [
   '/privacy',
   '/cookies',
   '/accessibility',
-  '/supplier',
+  
 ];
 
 export const GET: APIRoute = ({ site }) => {
