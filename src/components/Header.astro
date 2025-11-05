@@ -8,24 +8,11 @@ const nav = [
   { href: '/newsroom', label: 'Newsroom' },
 ];
 ---
-<header class="site-header">
+<header class="site-header" style="position:sticky; top:0; z-index:2100;">
   <div class="container nav" role="navigation" aria-label="Main">
     <a href="/" class="brand" style="text-decoration:none; color:inherit;">
       <span class="brand-mark" aria-hidden="true">
-        <svg width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" focusable="false">
-          <defs>
-            <linearGradient id="cubeGrad" x1="0" x2="1" y1="1" y2="0">
-              <stop offset="0%" stop-color="#8E3AE4"/>
-              <stop offset="100%" stop-color="#0065E5"/>
-            </linearGradient>
-          </defs>
-          <g fill="none" stroke="url(#cubeGrad)" stroke-width="1.4">
-            <path d="M12 2l9 5v10l-9 5-9-5V7l9-5z" fill="url(#cubeGrad)" fill-opacity="0.18" stroke="none"/>
-            <path d="M12 2l9 5-9 5-9-5 9-5z" fill="none"/>
-            <path d="M21 7v10l-9 5V12l9-5z"/>
-            <path d="M3 7v10l9 5V12L3 7z"/>
-          </g>
-        </svg>
+        <img src="/assets/logo.svg" alt="" width="22" height="22" style="display: block;" />
       </span>
       <span>Tensor Factory</span>
     </a>
@@ -35,7 +22,11 @@ const nav = [
       <span></span>
       <span></span>
     </label>
-    <nav id="primary-navigation" class="cluster nav-links" style="margin-left:auto;">
+    <label class="nav-overlay" for="nav-toggle" aria-hidden="true"></label>
+    <nav id="primary-navigation" class="nav-links" style="margin-left:auto;">
+      <label class="nav-close" for="nav-toggle">
+        <span class="sr-only">Close navigation</span>
+      </label>
       {nav.map(item => (
         <a href={item.href}>{item.label}</a>
       ))}

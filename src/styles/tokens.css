@@ -2,7 +2,7 @@
 
 :root {
   /* Colors: shifted to a dark theme with violet/indigo accent */
-  --color-neutral-950: #0b1220; /* deep navy */
+  --color-neutral-950: #000000; /* pure black */
   --color-neutral-0: #ffffff;
   --color-neutral-50: #f8fafc;
   --color-neutral-100: #f1f5f9;
@@ -22,10 +22,10 @@
   --color-accent-800: #5b21b6; /* focus ring contrast */
   --color-accent-900: #4c1d95;
 
-  --color-text: var(--color-neutral-50);
-  --color-text-muted: var(--color-neutral-400);
-  --color-bg: var(--color-neutral-950);
-  --color-border: rgba(148, 163, 184, 0.18);
+  --color-text: #ffffff;
+  --color-text-muted: #9ca3af;
+  --color-bg: #000000;
+  --color-border: rgba(255, 255, 255, 0.1);
   --color-focus: var(--color-accent-800);
   --color-success: #22c55e;
   --color-danger: #ef4444;
@@ -87,8 +87,8 @@
   --transition-base: 200ms ease;
 
   /* Surfaces */
-  --surface-muted: var(--color-neutral-900);
-  --surface-strong: #111827; /* slightly lighter than bg for cards */
+  --surface-muted: #0a0a0a;
+  --surface-strong: #1a1a1a; /* slightly lighter than bg for cards */
   --hero-gradient: radial-gradient(1200px 600px at 100% -10%, rgba(124, 58, 237, 0.20), transparent 60%),
     radial-gradient(800px 400px at -10% 10%, rgba(59, 130, 246, 0.12), transparent 60%);
 }
