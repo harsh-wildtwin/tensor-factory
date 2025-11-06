@@ -6,7 +6,7 @@ import Footer from "../../components/Footer.astro";
 const role = Astro.url.searchParams.get('role') || 'General application';
 const subject = encodeURIComponent(`Application: ${role}`);
 const body = encodeURIComponent(`Hello Tensor Factory team,%0D%0A%0D%0AI'd like to apply for: ${role}.%0D%0A%0D%0AName:%0D%0AEmail:%0D%0ALocation:%0D%0ALinks (CV/Portfolio):%0D%0A%0D%0ARegards,%0D%0A`);
-const mailto = `mailto:hello@tensorfactory.net?subject=${subject}&body=${body}`;
+const mailto = `mailto:contact@tensorfactory.net?subject=${subject}&body=${body}`;
 ---
 <BaseLayout title="Application sent – Tensor Factory" description="Thank you for your interest.">
   <Fragment slot="header"><Header /></Fragment>

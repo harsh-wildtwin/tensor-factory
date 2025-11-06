@@ -33,7 +33,10 @@
 /* Cards */
 .card {
   position: relative;
-  background: rgba(15, 23, 42, 0.65);
+  background-image: url('/assets/Card.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border: 1px solid rgba(244, 114, 182, 0.35);
   border-radius: var(--radius-3);
   box-shadow: 0 0 28px rgba(243, 114, 182, 0.25), 0 22px 42px rgba(15, 23, 42, 0.55);
@@ -172,6 +175,14 @@
 .hamburger { display: none; cursor: pointer; margin-left: auto; }
 .hamburger span { display: block; width: 22px; height: 2px; background: var(--color-text); margin: 5px 0; transition: transform var(--transition-fast), opacity var(--transition-fast); }
 
+/* Medium screens - ensure adequate padding */
+@media (min-width: 721px) and (max-width: 1400px) {
+  .site-header .container {
+    padding-left: clamp(48px, 6vw, 88px);
+    padding-right: clamp(48px, 8vw, 132px);
+  }
+}
+
 @media (max-width: 720px) {
   .site-header .container { padding-left: var(--container-pad-x); padding-right: var(--container-pad-x); }
   .site-header .nav { gap: var(--space-2); }
@@ -248,33 +259,65 @@
   text-align: left;
 }
 
-.hero::before {
+/* REMOVED: Hero overlay that interfered with clean black background */
+/* .hero::before {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(125deg, rgba(6, 8, 21, 0.92) 0%, rgba(7, 11, 28, 0.78) 32%, rgba(8, 12, 31, 0.48) 62%, rgba(10, 14, 34, 0.12) 78%, transparent 92%);
   z-index: -1;
   pointer-events: none;
-}
+} */
 
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image:
-    radial-gradient(86% 86% at 78% 38%, rgba(255, 13, 30, 0.96) 0%, rgba(219, 4, 200, 0.65) 38%, rgba(209, 4, 200, 0.36) 52%, rgba(193, 2, 198, 0) 72%),
+  /* ORIGINAL COMPLEX GLOW - KEPT FOR REFERENCE */
+  /* background-image:
+    radial-gradient(86% 86% at 78% 38%, rgba(255, 13, 30, 0.96) 0%, rgba(219, 4, 200, 0.65) 38%, rgba(209, 4, 200, 0.36) 52%, rgba(193, 2, 198, 0.18) 74%, rgba(106, 18, 176, 0.12) 88%, rgba(52, 16, 112, 0.08) 100%),
     radial-gradient(120% 90% at 8% -12%, rgba(75, 132, 255, 0.22) 0%, rgba(75, 132, 255, 0) 60%),
     radial-gradient(100% 120% at 50% 20%, rgba(30, 32, 48, 0.88) 0%, rgba(8, 8, 14, 0.92) 55%, rgba(4, 4, 10, 1) 100%);
   background-repeat: no-repeat;
   background-size:
-    clamp(900px, 66vw, 1600px) clamp(780px, 58vw, 1240px),
-    clamp(540px, 38vw, 860px) clamp(480px, 36vw, 720px),
+    max(100%, clamp(900px, 66vw, 1600px)) max(100%, clamp(780px, 58vw, 1240px)),
+    max(100%, clamp(540px, 38vw, 860px)) max(100%, clamp(480px, 36vw, 720px)),
     cover;
   background-position:
     calc(100% - 8vw) 35%,
     calc(-6% - 5vw) -8%,
     center;
-  filter: saturate(120%);
+  filter: saturate(120%); */
+  
+  /* GLOW EFFECT - Matching Figma design exactly */
+  /* Pure black background with subtle glow on right side */
+  background: #000000;
+  width: 100%;
+  height: 100%;
+  
   z-index: -2;
+  pointer-events: none;
+}
+
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  top: 42%;
+  left: 70%;
+  width: 834px;
+  height: 757px;
+  transform: translate(-50%, -50%) rotate(29.5deg);
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 13, 29, 1) 0%,
+    rgba(255, 13, 29, 1) 20%,
+    rgba(255, 13, 29, 0.95) 30%,
+    rgba(195, 0, 194, 0.9) 50%,
+    rgba(195, 0, 194, 0.75) 70%,
+    rgba(195, 0, 194, 0.6) 85%,
+    transparent 95%
+  );
+  filter: blur(200px);
+  border-radius: 50%;
   pointer-events: none;
 }
 
@@ -299,9 +342,9 @@
 }
 
 @media (max-width: 900px) {
-  .hero-bg {
-    background-size: 720px 720px, 620px 540px, cover;
-    background-position: 80% 40%, -26% -6%, center;
+  .hero-bg::after {
+    left: 65%;
+    top: 45%;
   }
   .hero-content {
     max-width: 100%;
@@ -323,9 +366,11 @@
   .hero {
     padding: clamp(96px, 32vh, 120px) 0 clamp(80px, 28vh, 104px);
   }
-  .hero-bg {
-    background-size: 560px 560px, 480px 420px, cover;
-    background-position: 82% 52%, -34% -4%, center;
+  .hero-bg::after {
+    left: 25%;
+    top: 48%;
+    width: 700px;
+    height: 635px;
   }
   .hero-title {
     font-size: clamp(38px, 10vw, 54px);
