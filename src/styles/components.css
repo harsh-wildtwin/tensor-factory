@@ -33,10 +33,7 @@
 /* Cards */
 .card {
   position: relative;
-  background-image: url('/assets/Card.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: rgba(15, 23, 42, 0.65);
   border: 1px solid rgba(244, 114, 182, 0.35);
   border-radius: var(--radius-3);
   box-shadow: 0 0 28px rgba(243, 114, 182, 0.25), 0 22px 42px rgba(15, 23, 42, 0.55);
@@ -269,11 +266,11 @@
     radial-gradient(100% 120% at 50% 20%, rgba(30, 32, 48, 0.88) 0%, rgba(8, 8, 14, 0.92) 55%, rgba(4, 4, 10, 1) 100%);
   background-repeat: no-repeat;
   background-size:
-    clamp(720px, 52vw, 1140px) clamp(720px, 52vw, 1140px),
+    clamp(900px, 66vw, 1600px) clamp(780px, 58vw, 1240px),
     clamp(540px, 38vw, 860px) clamp(480px, 36vw, 720px),
     cover;
   background-position:
-    calc(64% + 10vw) 35%,
+    calc(100% - 8vw) 35%,
     calc(-6% - 5vw) -8%,
     center;
   filter: saturate(120%);

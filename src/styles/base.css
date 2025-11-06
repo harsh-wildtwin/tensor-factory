@@ -54,8 +54,8 @@ hr { border: 0; height: 1px; background: var(--color-border); margin: var(--spac
 /* Full-bleed utility for background sections */
 .full-bleed {
   width: 100vw;
-  margin-left: 50%;
-  transform: translateX(-50%);
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
 }
 
 /* Forms base */
