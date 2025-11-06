@@ -375,6 +375,9 @@
   .hero-title {
     font-size: clamp(38px, 10vw, 54px);
   }
+  .desktop-only {
+    display: none;
+  }
   .hero-subtitle {
     font-size: 18px;
     max-width: 42ch;
