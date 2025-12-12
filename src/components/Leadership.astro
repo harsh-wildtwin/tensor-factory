@@ -1,0 +1,87 @@
+<div class="grid grid-2 card-grid card-grid--narrow" style="max-width: 800px; margin: 0 auto;">
+  <div class="card flip-card card--profile" tabindex="0">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <div class="card-icon card-icon--profile">
+          <img src="/assets/Harshit.jpg" alt="Harshit Choudhary" />
+        </div>
+        <div class="card-label">Founder & CEO</div>
+        <h3>Harshit Choudhary</h3>
+        <p>10+ years of experience</p>
+      </div>
+      <div class="flip-card-back">
+        <p>Spent 7 years driving product development at a major streaming platform. An expert in zero-to-one builds, he has shipped AI companion apps and multimodal agentic systems from scratch. Specializes in balancing user-centric design with robust safety architecture.</p>
+        <a href="https://www.linkedin.com/in/harshbee/" target="_blank" rel="noopener noreferrer" class="linkedin-link" aria-label="LinkedIn profile">
+          <img src="/assets/LI-Logo.png" alt="LinkedIn" />
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="card flip-card card--profile" tabindex="0">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <div class="card-icon card-icon--profile">
+          <img src="/assets/Ramon.jpeg" alt="Ramon Ramirez" />
+        </div>
+        <div class="card-label">Founder & CTO</div>
+        <h3>Ramon Ramirez</h3>
+        <p>15+ years of experience</p>
+      </div>
+      <div class="flip-card-back">
+        <p>Deep experience in engineering leadership at companies like Byborg IP and Metro Markets. A serial entrepreneur and expert in scaling high-volume financial systems and payment infrastructure. Specializes in turning complex AI and cloud technologies into stable, scalable platforms.</p>
+        <a href="https://www.linkedin.com/in/jorge-ramon-ramirez-saenz/" target="_blank" rel="noopener noreferrer" class="linkedin-link" aria-label="LinkedIn profile">
+          <img src="/assets/LI-Logo.png" alt="LinkedIn" />
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Handle flip card interaction
+  // We allow click-to-toggle on ALL devices.
+  // On desktop:
+  // - Hover flips the card (via CSS).
+  // - Click adds 'is-flipped' class (keeps it flipped even if mouse leaves).
+  // - Click again removes 'is-flipped' (returns to hover state, so if still hovering, it stays flipped).
+  // On mobile:
+  // - Tap adds 'is-flipped'.
+  // - Tap again removes 'is-flipped'.
+  
+  // Use a function to initialize to avoid global scope pollution if possible, though Astro modules are scoped.
+  function initFlipCards() {
+    const cards = document.querySelectorAll('.flip-card');
+    cards.forEach(card => {
+      // Check if listener is already attached to avoid duplicates if this script runs multiple times or with view transitions
+      // Note: In standard Astro MPA, scripts run once per page load.
+      
+      // We'll just attach new listeners. To be safe against double-attachment in some SPA frameworks (not here), we could check.
+      // But for simple Astro, this is fine.
+      
+      card.addEventListener('click', (e) => {
+        // Prevent flipping if clicking on the LinkedIn link
+        if ((e.target as HTMLElement).closest('.linkedin-link')) {
+          return;
+        }
+
+        // Toggle the class on every click
+        card.classList.toggle('is-flipped');
+        
+        // Remove focus to prevent sticky focus styles on some devices
+        if (document.activeElement instanceof HTMLElement) {
+          document.activeElement.blur();
+        }
+      });
+
+      // Handle Enter key for accessibility
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          card.classList.toggle('is-flipped');
+        }
+      });
+    });
+  }
+  
+  initFlipCards();
+</script>
