@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import Leadership from "../components/Leadership.astro";
 import OrgJson from "./_org-jsonld.astro";
 import SiteJson from "./_site-jsonld.astro";
 ---
@@ -66,28 +67,7 @@ import SiteJson from "./_site-jsonld.astro";
       <div class="section-header section-header--center">
         <h2 class="section-title">Who we are</h2>
       </div>
-      <div class="grid grid-2 card-grid card-grid--narrow" style="max-width: 800px; margin: 0 auto;">
-        <div class="card">
-          <div class="card-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-            </svg>
-          </div>
-          <div class="card-label">Founder & CEO</div>
-          <h3>Coming soon</h3>
-          <p>10+ years of experience</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-            </svg>
-          </div>
-          <div class="card-label">Founder & CTO</div>
-          <h3>Coming soon</h3>
-          <p>15+ years of experience</p>
-        </div>
-      </div>
+      <Leadership />
     </div>
   </section>
 
