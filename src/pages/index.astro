@@ -28,35 +28,61 @@ import SiteJson from "./_site-jsonld.astro";
         <h2 class="section-title">What we do</h2>
       </div>
       <div class="grid grid-2 grid-3 card-grid">
-        <div class="card">
-          <div class="card-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-            </svg>
+        <!-- Card 1 -->
+        <div class="card flip-card" tabindex="0">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="card-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <div class="card-label">AI</div>
+              <h3>Synthetic Media R&D</h3>
+              <p>Personalization, guardrails, provenance.</p>
+            </div>
+            <div class="flip-card-back">
+              <p>We build hyper-realistic, persona-trained LoRA models with strict ethical guardrails, ensuring every piece of content is high-fidelity, consensual, and unmistakably authentic.</p>
+            </div>
           </div>
-          <div class="card-label">AI</div>
-          <h3>Synthetic Media R&D</h3>
-          <p>Personalization, guardrails, provenance.</p>
         </div>
-        <div class="card">
-          <div class="card-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-            </svg>
+
+        <!-- Card 2 -->
+        <div class="card flip-card" tabindex="0">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="card-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
+              <div class="card-label">TRUST</div>
+              <h3>Platform Operations</h3>
+              <p>Trust &amp; Safety, governance, integrations</p>
+            </div>
+            <div class="flip-card-back">
+              <p>We handle the complex side of the creator economy. From identity checks to automated content moderation, we ensure a compliant, safe environment that protects both our creators and their fans.</p>
+            </div>
           </div>
-          <div class="card-label">TRUST</div>
-          <h3>Platform Operations</h3>
-          <p>Trust &amp; Safety, governance, integrations</p>
         </div>
-        <div class="card">
-          <div class="card-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
+
+        <!-- Card 3 -->
+        <div class="card flip-card" tabindex="0">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="card-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div class="card-label">MONETIZATION</div>
+              <h3>UGC economy Infrastructure</h3>
+              <p>Subscriptions, payouts, risk controls</p>
+            </div>
+            <div class="flip-card-back">
+              <p>We work with industry leaders to manage high-risk payment processing, seamless global payouts, and subscription tiers, allowing creators to monetize.</p>
+            </div>
           </div>
-          <div class="card-label">MONETIZATION</div>
-          <h3>UGC economy Infrastructure</h3>
-          <p>Subscriptions, payouts, risk controls</p>
         </div>
       </div>
     </div>
