@@ -47,42 +47,40 @@
   // On mobile:
   // - Tap adds 'is-flipped'.
   // - Tap again removes 'is-flipped'.
-  
-  // Use a function to initialize to avoid global scope pollution if possible, though Astro modules are scoped.
-  function initFlipCards() {
-    const cards = document.querySelectorAll('.flip-card');
-    cards.forEach(card => {
-      // Check if listener is already attached to avoid duplicates if this script runs multiple times or with view transitions
-      // Note: In standard Astro MPA, scripts run once per page load.
-      
-      // We'll just attach new listeners. To be safe against double-attachment in some SPA frameworks (not here), we could check.
-      // But for simple Astro, this is fine.
-      
-      card.addEventListener('click', (e) => {
-        // Prevent flipping if clicking on the LinkedIn link
-        if ((e.target as HTMLElement).closest('.linkedin-link')) {
-          return;
-        }
 
-        // Toggle the class on every click
+  // Use event delegation to handle clicks on any .flip-card, 
+  // ensuring it works even if elements are added dynamically or if the script runs early.
+  document.addEventListener('click', (e) => {
+    // Find the closest flip-card ancestor
+    const target = e.target as HTMLElement;
+    const card = target.closest('.flip-card');
+    
+    if (card) {
+      // Prevent flipping if clicking on the LinkedIn link
+      if (target.closest('.linkedin-link')) {
+        return;
+      }
+
+      // Toggle the class
+      card.classList.toggle('is-flipped');
+      
+      // Remove focus to prevent sticky focus styles on some devices
+      if (document.activeElement instanceof HTMLElement) {
+        document.activeElement.blur();
+      }
+    }
+  });
+
+  // Handle Enter key for accessibility using delegation
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      const target = e.target as HTMLElement;
+      const card = target.closest('.flip-card');
+      if (card) {
+        e.preventDefault();
         card.classList.toggle('is-flipped');
-        
-        // Remove focus to prevent sticky focus styles on some devices
-        if (document.activeElement instanceof HTMLElement) {
-          document.activeElement.blur();
-        }
-      });
-
-      // Handle Enter key for accessibility
-      card.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          card.classList.toggle('is-flipped');
-        }
-      });
-    });
-  }
-  
-  initFlipCards();
+      }
+    }
+  });
 </script>
 
